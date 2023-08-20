@@ -33,24 +33,29 @@ def result(argument):
 
 @items_router.post('/predictform/',description="index için router")
 async def formpredict(
+    req: Request,
     high_bp: int = Form(...),
     high_collestrol: int = Form(...),
     bmi: float = Form(...),
     gen_health:int = Form(...),
     diff_walk: int = Form(...),
+    
 ):
     userinfo= [high_bp,high_collestrol,bmi,gen_health,diff_walk]
 
     features = np.array(userinfo).reshape(1, -1)  # Ensure proper shape for prediction
     prediction = loaded_model.predict(features)
-    return {"prediction": result(int(prediction[0]))}
+    resultofanaysis= result(int(prediction[0]))
+    return templates.TemplateResponse("result.html", {"request": req, "result": resultofanaysis})
 
 
 
 
 
 
-@items_router.get("/health",description="servisin çalışıp çalışmadığını kontrol eden router")
+
+
+@items_router.get("/health",description="its check service is working or not")
 async def health(req: Request): 
     health=True
     if health==True:
@@ -64,11 +69,9 @@ class Item(BaseModel):
 
 @items_router.post("/predict/")
 def predict(item: Item):
-    features = np.array(item.features).reshape(1, -1)  # Ensure proper shape for prediction
+    features = np.array(item.features).reshape(1, -1) 
     prediction = loaded_model.predict(features)
     return {"prediction": int(prediction[0])}
-
-
 
 
 
