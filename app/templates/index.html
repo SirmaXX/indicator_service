@@ -10,11 +10,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>Diabet İndicator</title>
+    <title>Diabet indicator estimator</title>
 </head>
 
 <body>
-    <h1 class="text-center">Diabet İndicator</h1>
+    <h1 class="text-center">Diabet İndicator  estimator</h1>
 
 
 
@@ -22,17 +22,17 @@
         <div class="col-md-12">
             <form action="/predictform/" method="post">
                 <hr />
-                <p>HighBP</p>
+                <p>HighBP|do you have high blood pressure(BP)</p>
                 <div class="form-check">
                     <input class="form-check-input" name="high_bp" type="radio" value=0   id="flexRadioDefault1">
                     <label class="form-check-label" for="flexRadioDefault1">
-                        0
+                        0 = no ı have'not high BP 
                     </label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" name="high_bp"  type="radio"  value=1  id="flexRadioDefault2" checked>
                     <label class="form-check-label" for="flexRadioDefault2">
-                       1
+                        1 =   yes ı have high BP
                     </label>
                 </div>
                 <hr />
@@ -41,21 +41,21 @@
                 <div class="form-check">
                     <input class="form-check-input" name="high_collestrol" type="radio"  value=0 id="flexRadioDefault3">
                     <label class="form-check-label" for="flexRadioDefault3">
-                       0
+                        0 = no ı have'not high cholesterol 
                     </label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input"  name="high_collestrol" type="radio" value=1  id="flexRadioDefault4"
                         checked>
                     <label class="form-check-label" for="flexRadioDefault2">
-                      1
+                        1 = yes ı have high cholesterol
                     </label>
                 </div>
                 <hr />
                 <div class="form-group">
                     <label for="inputbmi">BMI</label>
                     <input type="number" class="form-control" name="bmi" id="inputbmi" aria-describedby="inputbmiHelp"
-                        placeholder="Enter inputbmi">
+                        >
                     <small id="emailHelp" class="form-text text-muted">Underweight = <18.5
                         Normal weight = 18.5–24.9
                         Overweight = 25–29.9
@@ -63,37 +63,29 @@
                 </div>
 
                 <hr />
-                <p>Gen Health</p>
-
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gen_health"   value=0 id="flexRadioDefault3">
-                    <label class="form-check-label" for="flexRadioDefault3">
-                       0
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio"  name="gen_health"  value=1  id="flexRadioDefault4"
-                        checked>
-                    <label class="form-check-label" for="flexRadioDefault2">
-                      1
-                    </label>
+           
+                <div class="form-group">
+                    <label for="inputbmi">Gen Health  | Would you say that in general your health is: scale 1-5 1 = excellent 2 = very good 3 = good 4 = fair 5 = poor</label>
+                    <input type="number" class="form-control" name="gen_health" id="inputbmi" aria-describedby="inputbmiHelp"
+                       >
+                    <small id="emailHelp" class="form-text text-muted"> 1 = excellent ,2 = very good, 3 = good ,4 = fair ,5 = poor</small>
                 </div>
 
            
                 <hr />
-                <p>DiffWalk</p>
+                <p>DiffWalk  |Do you have serious difficulty walking or climbing stairs? 0 = no 1 = yes</p>
 
                 <div class="form-check">
                     <input class="form-check-input" type="radio"  value=0  name="diff_walk"   id="flexRadioDefault3">
                     <label class="form-check-label" for="flexRadioDefault3">
-                       0
+                       0  = no  ı have'not  serious difficulty walking or climbing stairs
                     </label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" value=1  name="diff_walk"   id="flexRadioDefault4"
                         checked>
                     <label class="form-check-label" for="flexRadioDefault3">
-                     1
+                     1 = yes ı have   serious difficulty walking or climbing stairs
                     </label>
                 </div>
 

@@ -21,6 +21,16 @@ async def api_index(request: Request):
 
 
 
+#https://www.geeksforgeeks.org/switch-case-in-python-replacement/
+def result(argument):
+    switcher = {
+        0: "no diabetes ",
+        1: "prediabetes",
+        2: " diabetes",
+    }
+
+    return switcher.get(argument, "nothing")
+
 @items_router.post('/predictform/',description="index için router")
 async def formpredict(
     high_bp: int = Form(...),
@@ -29,11 +39,12 @@ async def formpredict(
     gen_health:int = Form(...),
     diff_walk: int = Form(...),
 ):
-    json= [high_bp,high_collestrol,bmi,gen_health,diff_walk]
+    userinfo= [high_bp,high_collestrol,bmi,gen_health,diff_walk]
 
-    features = np.array(json).reshape(1, -1)  # Ensure proper shape for prediction
+    features = np.array(userinfo).reshape(1, -1)  # Ensure proper shape for prediction
     prediction = loaded_model.predict(features)
-    return {"prediction": int(prediction[0])}
+    return {"prediction": result(int(prediction[0]))}
+
 
 
 
