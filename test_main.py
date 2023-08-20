@@ -19,4 +19,4 @@ def test_health():
 def test_predict():
     response = client.post("/predict/", json={"features": [1,2,21,1,3]})
     assert response.status_code == 200
-    assert response.json() == {"prediction": 1}
+    assert response.json() == {"prediction": 2}

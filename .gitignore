@@ -2,3 +2,5 @@ logs.log
 catboost_info
 .ipynb_checkpoints
 __pycache__
+.pytest_cache
+env

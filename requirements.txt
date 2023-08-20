@@ -1,0 +1,14 @@
+flask
+psycopg2-binary
+Flask-SQLAlchemy
+typing
+fastapi
+pydantic
+uvicorn
+python-multipart
+pytest
+requests
+httpx
+joblib
+numpy
+scikit-learn==1.2.2

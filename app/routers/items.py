@@ -5,9 +5,9 @@ import numpy as np
 
 import os
 
-model_path = os.path.join(os.path.dirname(__file__), 'trained_model.pkl')
+model_path = os.path.join(os.path.dirname(__file__), '../../models/diabet_012.pkl')
 loaded_model = joblib.load(model_path)
-
+print(model_path)
 
 items_router = APIRouter()
 
