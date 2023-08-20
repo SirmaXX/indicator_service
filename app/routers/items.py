@@ -46,7 +46,7 @@ async def formpredict(
     features = np.array(userinfo).reshape(1, -1)  # Ensure proper shape for prediction
     prediction = loaded_model.predict(features)
     resultofanaysis= result(int(prediction[0]))
-    return templates.TemplateResponse("result.html", {"request": req, "result": resultofanaysis})
+    return templates.TemplateResponse("index.html", {"request": req, "result": resultofanaysis})
 
 
 
