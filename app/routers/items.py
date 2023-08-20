@@ -31,7 +31,7 @@ def result(argument):
 
     return switcher.get(argument, "nothing")
 
-@items_router.post('/predictform/',description="index için router")
+@items_router.post('/',description="index için router")
 async def formpredict(
     req: Request,
     high_bp: int = Form(...),
