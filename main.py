@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from app.main import create_app
-from config.settings import settings
+
 
 app = create_app()
 
